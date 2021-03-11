@@ -66,7 +66,9 @@ var streamServer = func(cfg *Config, handler RecvHandler, errHandler ErrHandler)
 		for {
 			recvBytes, err := bufferedReader.ReadString('\n')
 
-			log.Printf("recvBytes:%d %s\n", len(recvBytes), recvBytes)
+			if len(recvBytes) > 10 {
+				log.Printf("recvBytes:%d %s\n", len(recvBytes), recvBytes)
+			}
 
 			if err != nil {
 				if err != io.EOF {

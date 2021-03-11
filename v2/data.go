@@ -9,4 +9,5 @@ type Data struct {
 	Lang             string            `json:"lang"`
 	ReferencedTweets []ReferencedTweet `json:"referenced_tweets"`
 	CreatedAt        time.Time         `json:"created_at"`
+	Entities         Entities          `json:"entities"`
 }
